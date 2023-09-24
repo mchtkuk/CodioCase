@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "date": "2023-09-24",
+      "brand": "dsflkgjskdgj",
+      "color": "sdkafjsk",
+      "image": "skdjfskfj",
+      "model": "qkfgjdkj",
+      "price": "23",
+      "id": 1
+    },
+    {
+      "date": "2023-09-24",
+      "brand": "Mclaren",
+      "color": "Orange",
+      "image": "https://images.cars.com/cldstatic/wp-content/uploads/mclaren-750S-Coup-exterior-oem-01.jpg",
+      "model": "R5",
+      "price": "240000$",
+      "id": 2
+    }
+  ]
+}
