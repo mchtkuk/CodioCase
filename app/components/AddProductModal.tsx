@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 
 interface AddProductModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (productData: Product) => void; 
+  onSubmit: (productData: Product) => void;
+  addProduct: (newProduct: Product) => void; 
 }
 
-function AddProductModal({ isOpen, onClose, onSubmit }: AddProductModalProps) {
+function AddProductModal({ isOpen, onClose, onSubmit, addProduct }: AddProductModalProps) {
   const [isNotification, setNotification] = useState("")
   const [productData, setProductData] = useState<Product>({
     id: 0,
@@ -18,6 +20,7 @@ function AddProductModal({ isOpen, onClose, onSubmit }: AddProductModalProps) {
     price: "",
     color: "",
   });
+  const [t, i18n] = useTranslation()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -29,7 +32,7 @@ function AddProductModal({ isOpen, onClose, onSubmit }: AddProductModalProps) {
     try {
       if (!productData.brand || !productData.image || !productData.price || !productData.color || !productData.model) {
       
-        setNotification("Missing required information");
+        setNotification(() => t("missinginformation"));
         setTimeout(() => {
           setNotification("");
         }, 3000);
@@ -67,6 +70,11 @@ function AddProductModal({ isOpen, onClose, onSubmit }: AddProductModalProps) {
         setTimeout(() => {
           setNotification("");
         }, 3000); 
+        onSubmit(newProduct);
+
+        // Call the addProduct function from the parent component
+        addProduct(newProduct);
+
       } else {
         console.error("Error adding product.");
       }
@@ -89,12 +97,12 @@ function AddProductModal({ isOpen, onClose, onSubmit }: AddProductModalProps) {
           </button>
       </div>
         <div className='details-modal-title'>
-        <h2>Add Car to Showroom</h2>
+        <h2>{t("addcartoshowroom")}</h2>
         </div>
         <div className='details-modal-content'>
       <form onSubmit={handleSubmit}>
         <label>
-          Brand:
+        {t("modalbrand")}
           <input
             type="text"
             name="brand"
@@ -112,7 +120,7 @@ function AddProductModal({ isOpen, onClose, onSubmit }: AddProductModalProps) {
           />
         </label>
         <label>
-          Price:
+          {t("modalprice")}
           <input
             type="text"
             name="price"
@@ -121,7 +129,7 @@ function AddProductModal({ isOpen, onClose, onSubmit }: AddProductModalProps) {
           />
         </label>
         <label>
-          Color:
+        {t("modalcolor")}
           <input
             type="text"
             name="color"
@@ -130,7 +138,7 @@ function AddProductModal({ isOpen, onClose, onSubmit }: AddProductModalProps) {
           />
         </label>
         <label>
-          Image:
+        {t("modalimage")}
           <input
             type="text"
             name="image"
@@ -139,7 +147,7 @@ function AddProductModal({ isOpen, onClose, onSubmit }: AddProductModalProps) {
           />
         </label>
         <div style={{paddingTop: "20px", flexDirection: "column"}}>
-        <button className='button-1' type="submit">Add Product</button>
+        <button className='button-1' type="submit">{t("modalregister")}</button>
         <div>
         <p style={{paddingTop: "10px"}}>{isNotification}</p>
         </div>

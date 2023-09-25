@@ -65,21 +65,36 @@ export async function PUT(request: Request) {
 }
 
 
+// export async function DELETE(request: Request) {
+//   const { id }: Partial<Product> = await request.json()
 
-export async function DELETE(request: Request) {
-  const { id }: Partial<Product> = await request.json()
+//   if (!id) return NextResponse.json({
+//     "message": "Product id required"
+//   })
+  
+//    await fetch(`${DATA_SOURCE_URL}/${id}`, {
+//     method: 'DELETE',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//   });
 
+//   return NextResponse.json({ "message": `Product ${id} deleted`})
+
+// }
+
+
+export async function DELETE(id: number) {
   if (!id) return NextResponse.json({
     "message": "Product id required"
-  })
-  
-   await fetch(`${DATA_SOURCE_URL}/${id}`, {
+  });
+
+  await fetch(`${DATA_SOURCE_URL}/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
     }
   });
 
-  return NextResponse.json({ "message": `Product ${id} deleted`})
-
+  return NextResponse.json({ "message": `Product ${id} deleted`});
 }
