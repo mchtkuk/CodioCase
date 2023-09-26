@@ -1,11 +1,51 @@
 Codio - Case - Web Ecommerce Car Gallery Project - Mücahit Kuk
 
-Kurulum: 
+## Run Locally
 
-- Projeyi indirdikten sonra codio_case dosyasına sağ tıklayıp ayrı bir terminal açın ve sonra npm install yazarak tüm dependenciesleri indirin.
-- İndirme tamamlandıktan sonra halihazırda olduğunuz terminalde "npm run dev" yazarak next'i ayağa kaldırın, sonra yeniden codio_case dosyasından ayrı bir terminal açarak "npm run server" yazarak backend'i ayağa kaldırın.
+First you need install Node engine (https://nodejs.org/en/).
+If you already installed
 
-Kullanılan Teknolojiler: 
+Clone the project, 
+
+
+```bash
+  git clone https://github.com/mchtkuk/CodioCase.git
+```
+
+Go to the project directory
+
+```bash
+  cd CodioCase
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the next
+
+```bash
+  npm run dev
+```
+
+Open another terminal in CodioCase -- Example (/CodioCase/ npm run server) and start the server
+
+```bash
+  npm run server
+```
+
+All good!
+
+## Tech Stack
+
+
+HTML,CSS, JavaScript, TypeScript, React, Next.js, SASS/LESS,
+Git, i18next
+
+
+
 
 "dependencies": {
     "@types/node": "20.6.4",

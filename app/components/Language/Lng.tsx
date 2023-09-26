@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import "../globals.css"
+import "../../globals.css"
 import { useTranslation } from 'react-i18next';
 import {MdDarkMode} from "react-icons/md"
 

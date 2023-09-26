@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { DELETE, GET } from '../api/products/route';
-import Card from './ui/card';
-import AddProductModal from './AddProductModal';
-import UpdateProductModal from './UpdateProductModal';
-import { AiOutlineLoading } from 'react-icons/ai';
-import ProductFilter from './ProductFilter';
-import { useTranslation } from 'react-i18next';
+import React, { useEffect, useState } from "react";
+import { DELETE, GET } from "../../api/products/route";
+import Card from "../ui/card";
+import AddProductModal from "../Products/AddProductModal";
+import UpdateProductModal from "../Products/UpdateProductModal";
+import { AiOutlineLoading } from "react-icons/ai";
+import ProductFilter from "../Filters/ProductFilter";
+import { useTranslation } from "react-i18next";
 
 const Showroom = () => {
   const [t, i18n] = useTranslation();
@@ -16,18 +16,18 @@ const Showroom = () => {
   const [selectedProduct, setSelectedProduct] = useState({});
   const [isFiltering, setIsFiltering] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const [sortOrder, setSortOrder] = useState('newest');
+  const [sortOrder, setSortOrder] = useState("newest");
   const [isLoading, setLoading] = useState(false);
 
   const openUpdateModal = (product: any) => {
     setSelectedProduct(product);
     setUpdateModalOpen(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const openModal = () => {
     setModalOpen(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const closeModal = () => {
@@ -48,7 +48,7 @@ const Showroom = () => {
         setFilteredProducts(data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -69,7 +69,7 @@ const Showroom = () => {
         console.error(`Error deleting product with ID ${id}`);
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -84,7 +84,7 @@ const Showroom = () => {
         product.id === updatedProduct.id ? updatedProduct : product
       )
     );
-  
+
     // Update the filteredProducts array
     setFilteredProducts((prevFilteredProducts: Product[]) =>
       prevFilteredProducts.map((product) =>
@@ -95,11 +95,11 @@ const Showroom = () => {
 
   const applyFilterAndSort = (productsToFilter: Product[]) => {
     let filteredData = productsToFilter;
-    if (sortOrder === 'newest') {
+    if (sortOrder === "newest") {
       filteredData.sort(
         (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
       );
-    } else if (sortOrder === 'oldest') {
+    } else if (sortOrder === "oldest") {
       filteredData.sort(
         (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
       );
@@ -109,15 +109,14 @@ const Showroom = () => {
     setIsFiltering(true);
   };
 
-
   const handleSort = (order: string) => {
     setIsFiltering(true);
     const sortedProducts = [...filteredProducts];
-    if (order === 'newest') {
+    if (order === "newest") {
       sortedProducts.sort(
         (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
       );
-    } else if (order === 'oldest') {
+    } else if (order === "oldest") {
       sortedProducts.sort(
         (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
       );
@@ -130,7 +129,7 @@ const Showroom = () => {
     <>
       <div className="button-container">
         <button onClick={openModal} className="button-1">
-          {t('registercar')}
+          {t("registercar")}
         </button>
       </div>
       <ProductFilter
@@ -140,7 +139,7 @@ const Showroom = () => {
       />
       {isLoading && (
         <div
-          style={{ paddingTop: '2rem', justifyContent: 'center' }}
+          style={{ paddingTop: "2rem", justifyContent: "center" }}
           className="container"
         >
           <AiOutlineLoading className="loading-icon" />
