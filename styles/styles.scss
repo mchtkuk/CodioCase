@@ -1,3 +1,5 @@
+@import "./variables.module.scss";
+
 // Globals
 
 .button-1 {
@@ -10,6 +12,7 @@
   cursor: pointer;
   display: inline-block;
   font-family: "Amazon Ember",sans-serif;
+  font-style: bold;
   font-size: 13px;
   line-height: 29px;
   padding: 0 10px 0 11px;
@@ -175,13 +178,32 @@
   width: 100%;
   h1 {
     font-size: 68px;
+    @media screen and (max-width: 540px) {
+      font-size: $heading-small;
+      text-align: center;
+    }
+  }
+  h3 {
+    padding-bottom: 2rem;
+    @media screen and (max-width: 540px) {
+      font-size: 20px;
+      text-align: center;
+     
+    }
   }
 }
 
 // Showroom
 
+.button-container {
+  @extend .container;
+  @media screen and (max-width: 768px) {
+    padding-bottom: 2rem;
+    justify-content: center;
+  }
+}
+
 .showroom-container {
-  padding-top: 50px;
   display: flex;
   margin: 0 auto;
   max-width: 1200px;
@@ -350,7 +372,41 @@
     border-radius: 5px;
     border-color: transparent;
   }
+  @media screen and (max-width: 740px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
+// Light - Dark mode styles
 
+.light {
+  .logo {
+    filter: invert(100%);
+  }
+  .nft {
+    background-color: #0f1111;
+  }
+  .main {
+    h2,h3 {
+      color: white;
+    }
+  }
+ 
+  .details-modal {
+    input {
+      background-color: #000000aa;
+      color: white;
+    }
+  }
+
+ .product-filter {
+  input {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2px;
+  }
+  
+ }
+}
 

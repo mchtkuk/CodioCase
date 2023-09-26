@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import Navbar from "./components/Navbar"
 import Showroom from './components/Showroom'
 import "./i18n"
+import Footer from "./components/Footer"
 
 
 
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Showroom />
+      <Footer />
       </>
   )
 }

@@ -52,7 +52,6 @@ function AddProductModal({ isOpen, onClose, onSubmit, addProduct }: AddProductMo
   
       if (response.ok) {
         const newProduct: Product = await response.json();
-        console.log("Product added successfully:", newProduct);
         setNotification("Product Added Successfully");
   
 

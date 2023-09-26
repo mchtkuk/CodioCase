@@ -1,58 +1,49 @@
 {
   "products": [
     {
-      "date": "2023-09-25",
+      "date": "2021-09-26",
       "brand": "Mclaren",
       "color": "Orange",
       "image": "https://images.cars.com/cldstatic/wp-content/uploads/mclaren-750S-Coup-exterior-oem-01.jpg",
-      "model": "GTR",
-      "price": "300000",
-      "id": 3
-    },
-    {
-      "date": "2021-09-25",
-      "brand": "Ferrari",
-      "color": "Red",
-      "image": "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=960",
-      "model": "M4",
-      "price": "350000",
-      "id": 4
-    },
-    {
-      "date": "2023-09-25",
-      "brand": "Porsche",
-      "color": "Orange",
-      "image": "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/10-porsche-718-cayman-gt4-rs-top-10.jpg?itok=BacF-43A",
-      "model": "GT3",
+      "model": "R5",
       "price": "200000",
-      "id": 5
+      "id": 1
     },
     {
-      "date": "2023-09-25",
+      "date": "2022-09-26",
       "brand": "Audi",
       "color": "White",
       "image": "https://hips.hearstapps.com/hmg-prod/images/2023-audi-r8-gt-front-three-quarters-motion-3-1664827965.jpg?crop=0.585xw:0.438xh;0.0785xw,0.353xh&resize=1200:*",
-      "model": "R8",
-      "price": "150000",
-      "id": 6
-    },
-    {
-      "date": "2023-09-25",
-      "brand": "Koenigsegg",
-      "color": "Green",
-      "image": "https://img.jamesedition.com/listing_images/2023/07/27/08/43/26/3eccaccf-3fc6-4924-9af0-846d9499cee9/je/760x470xc.jpg",
-      "model": "GTR",
+      "model": "R5",
       "price": "500000",
-      "id": 7
+      "id": 3
     },
     {
-      "date": "2023-09-25",
+      "date": "2023-09-26",
+      "brand": "Ferrari",
+      "color": "Red",
+      "image": "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=960",
+      "model": "R5",
+      "price": "150000",
+      "id": 4
+    },
+    {
+      "date": "2020-09-26",
       "brand": "Ford",
-      "color": "Gray",
+      "color": "White",
       "image": "https://hips.hearstapps.com/hmg-prod/images/2022-ford-mustang-shelby-gt500-02-1636734552.jpg",
       "model": "Mustang",
       "price": "50000",
-      "id": 8
+      "id": 6
+    },
+    {
+      "date": "2023-09-26",
+      "brand": "Tesla",
+      "color": "Red",
+      "image": "https://cdn.motor1.com/images/mgl/VA0z9/s1/tesla-roadster.jpg",
+      "model": "Roadster",
+      "price": "100000",
+      "id": 7
     }
   ]
 }

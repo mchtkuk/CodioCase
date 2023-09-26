@@ -1,5 +1,5 @@
-import React from 'react'
 import '../../../styles/styles.scss'
+import { useTranslation } from 'react-i18next';
 
 interface CardProps {
   price: string;
@@ -15,7 +15,7 @@ interface CardProps {
 
 
 const Card = ({ id, price, brand, color, date, model, image, onDelete, onUpdate}: CardProps) => {
-
+ const [t, i18n] = useTranslation()
 
   return (
     <div className="nft">
@@ -23,7 +23,7 @@ const Card = ({ id, price, brand, color, date, model, image, onDelete, onUpdate}
       <img className='tokenImage' src={image} alt="Image" />
       <h2>{brand}</h2>
       <h3>{model}</h3>
-      <p className='description'>Color: {color}</p>
+      <p className='description'>{t("carcolor")}: {color}</p>
       <div className='tokenInfo'>
         <div className="price">
           <p>{price}$</p>
@@ -35,8 +35,8 @@ const Card = ({ id, price, brand, color, date, model, image, onDelete, onUpdate}
       </div>
       <hr />
       <div className='creator'>
-      <button className='button-1' onClick={() => onUpdate(id)}>Update</button>
-      <button className='button-1' onClick={() => onDelete(id)}>Delete</button>
+      <button className='button-1' onClick={() => onUpdate(id)}>{t("carupdate")}</button>
+      <button className='button-1' onClick={() => onDelete(id)}>{t("cardelete")}</button>
       </div>
     </div>
   </div>

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { AiOutlineLoading } from 'react-icons/ai';
 
 interface UpdateProductModalProps {
   isOpen: boolean;
@@ -16,8 +18,10 @@ function UpdateProductModal({
   const [updatedProductData, setUpdatedProductData] = useState<Partial<Product>>(
     initialProductData
   );
-
+  
+  const [isLoading, setIsLoading] = useState(false)
   const [updateNotification, setUpdateNotification] = useState("")
+  const [t, i18n] = useTranslation()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -29,7 +33,7 @@ function UpdateProductModal({
     try {
       if (!updatedProductData.brand || !updatedProductData.image || !updatedProductData.price || !updatedProductData.color || !updatedProductData.model) {
 
-         
+        
         setUpdateNotification("Missing required information");
         setTimeout(() => {
           setUpdateNotification("");
@@ -37,7 +41,7 @@ function UpdateProductModal({
         return;
       }
   
-
+      setIsLoading(true)
       const response = await fetch(`http://localhost:3004/products/${initialProductData.id}`, {
         method: 'PUT',
         headers: {
@@ -48,7 +52,6 @@ function UpdateProductModal({
 
       if (response.ok) {
         const updatedProduct: Partial<Product> = await response.json();
-        console.log('Product updated successfully:', updatedProduct);
         onUpdate(updatedProduct);
         onClose(); // Close the modal
       } else {
@@ -76,12 +79,12 @@ function UpdateProductModal({
         </button>
       </div>
       <div className='details-modal-title'>
-        <h2>Update The Car</h2>
+        <h2>{t("modalupdate")}</h2>
       </div>
       <div className='details-modal-content'>
         <form onSubmit={handleSubmit}>
           <label>
-            Brand:
+          {t("modalbrand")}
             <input
               type="text"
               name="brand"
@@ -90,7 +93,7 @@ function UpdateProductModal({
             />
           </label>
           <label>
-            Model:
+            Model
             <input
               type="text"
               name="model"
@@ -99,7 +102,7 @@ function UpdateProductModal({
             />
           </label>
           <label>
-            Price:
+          {t("modalprice")}
             <input
               type="text"
               name="price"
@@ -108,7 +111,7 @@ function UpdateProductModal({
             />
           </label>
           <label>
-            Color:
+          {t("modalcolor")}
             <input
               type="text"
               name="color"
@@ -117,7 +120,7 @@ function UpdateProductModal({
             />
           </label>
           <label>
-            Image:
+          {t("modalimage")}
             <input
               type="text"
               name="image"
@@ -125,9 +128,12 @@ function UpdateProductModal({
               onChange={handleChange}
             />
           </label>
-          <div style={{ paddingTop: "20px", flexDirection: "column" }}>
-            <button className='button-1'type="submit">Update</button>
+          <div style={{ paddingTop: "20px", flexDirection: "row", display: "flex", gap: "2rem" }}>
+            <button className='button-1'type="submit">{t("modalupdatebutton")}</button>
             <p>{updateNotification}</p>
+            {isLoading && (
+          <AiOutlineLoading style={{fontSize: "2rem", color: "green"}} className="loading-icon" />
+      )}
           </div>
         </form>
       </div>

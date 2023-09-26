@@ -1,5 +1,3 @@
-"use client"
-import React, { useState } from 'react';
 import '../../styles/styles.scss'
 import Lng from './Lng';
 
@@ -10,7 +8,7 @@ const Navbar = () => {
       <div className="container">
         <div className='image'>
           <a href='/'>
-            <img src='https://codio.tech/img/logo-light.svg' alt='Logo' />
+            <img className='logo' src='https://codio.tech/img/logo-light.svg' alt='Logo' />
           </a>
         </div>
         <nav className='nav-section'>

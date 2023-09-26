@@ -14,7 +14,9 @@ const resources = {
       modalprice: "Fiyat",
       modalcolor: "Renk",
       modalimage: "Fotoğraf",
-      modalregister: "Giriş",
+      modalregister: "Ekle",
+      modalupdate: "Araba Bilgilerini Güncelleyin",
+      modalupdatebutton: "Güncelle",
       missinginformation: "Gerekli bilgiler eksik",
       filtertitle: "Filtre",
       filterminprice: "Minimum USD",
@@ -22,7 +24,13 @@ const resources = {
       filterapply: "Fiyatı Uygula",
       filtersortby: "Sırala",
       filternewest: "En yeniden eskiye",
-      filteroldest: "En eskiden yeniye"
+      filteroldest: "En eskiden yeniye",
+      carcolor: "Renk",
+      carupdate: "Güncelle",
+      cardelete: "Sil",
+      footerrights: "Tüm Hakları Saklıdır.",
+      tr: "Türkçe",
+      en: "İngilizce"
     }
   },
   en: {
@@ -37,6 +45,8 @@ const resources = {
       modalcolor: "Color",
       modalimage: "Image",
       modalregister: "Register",
+      modalupdate: "Update The Car Information",
+      modalupdatebutton: "Update",
       missinginformation: "Missing required information",
       filtertitle: "Filter",
       filterminprice: "Min USD",
@@ -44,7 +54,13 @@ const resources = {
       filterapply: "Apply Price",
       filtersortby: "Sort by",
       filternewest: "Newest to Oldest",
-      filteroldest: "Oldest to Newest"
+      filteroldest: "Oldest to Newest",
+      carcolor: "Color",
+      carupdate: "Update",
+      cardelete: "Delete",
+      footerrights: "All Rights Reserved.",
+      tr: "Turkish",
+      en: "English"
     }
   }
 }

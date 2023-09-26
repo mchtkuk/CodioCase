@@ -15,12 +15,9 @@ const ProductFilter = ({ products, onFilter, onSort }: ProductFilterProps) => {
     startDate: "",
     endDate: "",
   });
-  const [t, i18n] = useTranslation();
-  const [sortOrder, setSortOrder] = useState("newest");
 
-  useEffect(() => {
-    setSortOrder('default');
-  }, []);
+  const [t, i18n] = useTranslation();
+  const [sortOrder, setSortOrder] = useState("default");
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -84,7 +81,6 @@ const ProductFilter = ({ products, onFilter, onSort }: ProductFilterProps) => {
             name="sortOrder"
             value={sortOrder}
             onChange={handleSortChange}
-            defaultValue="default"
           >
             <option value="default">{t("filtersortby")}</option>
             <option value="newest">{t("filternewest")}</option>
