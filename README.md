@@ -38,6 +38,15 @@ Open another terminal in CodioCase -- Example (/CodioCase/ npm run server) and s
 
 All good!
 
+How To Exit Project?
+
+In both terminals use
+
+```bash
+  ctrl+c 
+  Y
+```
+
 ## Tech Stack
 
 
