@@ -5,8 +5,11 @@ import {MdDarkMode} from "react-icons/md"
 
 const Lng = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    const storedDarkMode = localStorage.getItem('isDarkMode') === 'true';
-    return storedDarkMode;
+    if (typeof localStorage !== 'undefined') {
+      const storedDarkMode = localStorage.getItem('isDarkMode') === 'true';
+      return storedDarkMode;
+    }
+    return false;
   });
   const { t, i18n } = useTranslation();
 
