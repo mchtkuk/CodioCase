@@ -110,7 +110,7 @@ function AddProductModal({ isOpen, onClose, onSubmit, addProduct }: AddProductMo
           />
         </label>
         <label>
-          Model:
+          Model
           <input
             type="text"
             name="model"

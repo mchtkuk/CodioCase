@@ -26,6 +26,10 @@ a {
   text-decoration: none;
 }
 
+input {
+  outline: none;
+  padding-left: 10px;
+}
 
 /* Light mode */
 html:not(.dark):not(.light) {
